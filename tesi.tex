@@ -1,0 +1,73 @@
+\documentclass[12pt,a4paper,oneside,openright]{book}
+\usepackage{packages} % inserisce tutti le macro necessarie per il
+                        % funzionamento
+\usepackage{frontesp} % modificare questo file per i diplomi e se si ha
+                        % un solo correlatore
+\usepackage{setspace}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+
+\setstretch{1.3}  %interlinea, mettere 1 per singola da usarsi per le bozze!!!
+
+\begin{document}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=6cm]{images/logo.png}
+\end{figure}
+
+\title{Titolo tesi italiano}
+
+\providecommand{\entitle}{Titolo tesi inglese}
+
+\providecommand{\autore}{Nome candidato}                        %candidato
+\providecommand{\matricola}{matricola}
+\providecommand{\principaladviser}{Prof.~Ipse Dixit}  %relatore
+\providecommand{\firstreader}{Prof.~Ipse Dixit}            %correlatore
+%\providecommand{\secondreader}{Chiar.mo~Prof. R. SEMPRONIO}   %correlatore
+\providecommand{\annoacc}{2017/18}
+\providecommand{\tipo}{Triennale} % corso di laurea in ??
+\providecommand{\corso}{Informatica} % corso di laurea in ??
+
+% genera la prima pagina
+
+\titlep
+
+% indica l'inizio della parte introduttiva
+\frontmatter
+
+   \input{ringraziamenti}
+   \tableofcontents
+   \listoffigures
+   \listoftables
+%   \listofalgorithms
+
+\clearpage
+
+% indica l'inizio della parte centrale
+\mainmatter
+ %\input{abstract}
+ \input{introd} % attenzione! guardare introd.tex per vedere come e' fatto
+ \input{cap_01}
+ \input{cap_02}
+ \input{cap_03}
+ \input{cap_04}
+ \input{cap_05}
+% altri capitoli...
+
+% da qui in poi \chapter genera un'appendice
+\appendix
+\renewcommand{\chaptermark}[1]{\markboth{{\appendixname}\ \thechapter.\hspace{1em}#1}{}}
+
+\clearpage
+\addcontentsline{toc}{chapter}{Bibliografia}
+\bibliography{citazioni}
+%\bibliographystyle{abbrv}
+\bibliographystyle{ieeetr}
+
+
+%\cfoot{\emph{Finito di stampare il \today\/ utilizzando \LaTeXe}}
+\end{document}

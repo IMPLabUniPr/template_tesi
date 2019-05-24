@@ -1,0 +1,63 @@
+\makeatletter
+\setcounter{tocdepth}{4}
+\oddsidemargin 0.5in \evensidemargin 0.5in
+\marginparwidth 40pt \marginparsep 15pt
+\topmargin 0pt \headsep .5in
+\textheight 8.1in \textwidth 5.7in
+
+
+\def\titlep{%
+	\thispagestyle{empty}%
+       % \null%
+	\begin{center}
+                 %{\Large \uppercase{Universit\`a degli Studi di Parma}}\\
+                 \uppercase{DIPARTIMENTO DI INGEGNERIA E ARCHITETTURA}\\
+                 \vskip 0.5 cm
+                 Corso di Laurea \tipo{} in Ingegneria \corso
+	\end{center}
+     	\vspace{4mm}
+	\begin{center}
+		{\Large\uppercase\expandafter{\@title}}\\
+		\vspace{5mm}
+		\hrule
+		\vspace{5mm}
+		{\Large\uppercase\expandafter{\entitle}}
+	\end{center}
+%\null
+
+	\vfill
+%\vspace{15mm}
+%\vspace*{\fill}
+\begin{flushleft}
+Relatore:\\
+\principaladviser\\
+Correlatori:\\
+\firstreader\\
+\end{flushleft}
+\begin{flushright}
+Tesi di Laurea di:\\
+\autore\\
+Matricola: \matricola
+\end{flushright}
+
+     \vfill
+     \begin{center}
+     \sc anno accademico \annoacc
+     \end{center}\vskip.5in\newpage}
+
+
+\pagestyle{plain}
+
+
+
+\makeatother
+
+% PAGE HEADERS
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{{\chaptername}\ \thechapter.\hspace{1em}#1}{}}
+
+% definisce l'header e il footer
+\lhead[\fancyplain{}{}]{\fancyplain{}{\leftmark}} \chead{} \rhead{\thepage}
+\lfoot{} \cfoot{} \rfoot{}
+
+
