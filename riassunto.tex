@@ -1,0 +1,54 @@
+\documentclass[a4paper,12pt]{article}
+% Margini
+% 1) A mano
+%\setlength{\topmargin}{0in}
+%\setlength{\headheight}{0in}
+%\setlength{\headsep}{0in}
+%\setlength{\textheight}{9.75in}
+%\setlength{\oddsidemargin}{0in}
+%\setlength{\textwidth}{6.35in}
+% 2) margine di 1,5 cm
+\usepackage[cm,headings]{fullpage}
+
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+%\usepackage[dvips,plainpages=false,linkcolor=black, colorlinks]{hyperref}
+% Aggiunte
+\usepackage{amssymb}				% matematica
+\usepackage{amsmath}				% matematica
+\usepackage{amsthm}				% matematica -> stile teoremi, def, proposizioni
+\usepackage{wrapfig}				% figure con testo circondato
+\usepackage[final]{graphicx}
+\usepackage{subfig}				% per mettere pi� figure in una stessa
+\graphicspath{{./images/}}
+\DeclareGraphicsExtensions{.png,.pdf,.jpg}
+\setlength{\parindent}{0in}
+\usepackage{xcolor}
+
+\pagestyle{empty}
+
+\begin{document}
+
+    \begin{center} % intestazione
+        \uppercase{ {\large \textbf{Università di Parma} } } \\
+        \uppercase{ {\small Dipartimento di Ingegneria e Architettura}}
+
+        \uppercase{ {\small Corso di Laurea Magistrale in Ingegneria Informatica\\} }
+        \rule{\textwidth}{0.4pt}\\[2mm]
+
+        \uppercase{ {\large Titolo tesi in italiano \\[3mm]} }
+        \uppercase{ {\small Titolo tesi in inglese} }\\[12pt]
+
+        \begin{tabular*}{0.8\textwidth}{l@{\extracolsep{\fill}}r}
+            {\em Relatore}:&\\
+            Chiar.mo Prof.~\uppercase{Nome Relatore}&\\[2mm]
+            {\em Correlatore}:& {\em Tesi di Laurea di}:\\
+            Dott.~\uppercase{Nome Correlatore}& \uppercase{Nome Tesista} \\
+        \end{tabular*}
+    \end{center}
+    \vspace{12pt}
+
+    Testo max 2 pagine.
+\end{document}
