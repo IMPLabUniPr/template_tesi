@@ -5,6 +5,7 @@
 \topmargin 0pt \headsep .5in
 \textheight 8.1in \textwidth 5.7in
 
+\newcommand{\nameStyle}[1]{#1}
 
 \def\titlep{%
 	\thispagestyle{empty}%
@@ -27,17 +28,54 @@
 %	\vfill
 \vspace{1mm}
 %\vspace*{\fill}
-\begin{flushleft}
-Relatore:\\
-\principaladviser\\
-Correlatori:\\
-\firstreader\\
-\end{flushleft}
-\begin{flushright}
-Tesi di Laurea di:\\
-\autore\\
-Matricola: \matricola
-\end{flushright}
+%\begin{flushleft}
+%Relatore:\\
+%\principaladviser\\
+%Correlatori:\\
+%\firstreader\\
+%\end{flushleft}
+%\begin{flushright}
+%Tesi di Laurea di:\\
+%\autore\\
+%Matricola: \matricola
+%\end{flushright}
+
+{\large \textsc{Candidato:}} \hfill
+%\ifempty{\@advisorSecond}
+\ifdef{\advisorSecond}%
+{{\large \raggedleft \textsc{Relatori:} \par}}%
+{{\large \raggedleft \textsc{Relatore:} \par}}%
+{\large {\nameStyle{\autore}} \hfill {\nameStyle{\principaladviser}} \par}
+\ifdef{\advisorSecond}%
+{{\large \raggedleft {\nameStyle{\advisorSecond}} \par}
+    \ifdef{\advisorThird}%
+    {{\large \raggedleft {\nameStyle{\advisorThird}} \par}
+        \ifdef{\advisorFourth}%
+        {{\large \raggedleft {\nameStyle{\advisorFourth}} \par}}%
+        {}
+    }%
+    {}%
+}%
+{}%
+\vspace*{1.0em}
+\ifdef{\firstreader}{%
+    \ifdef{\coadvisorSecond}%
+    {{\large \raggedleft \textsc{Correlatori:} \par}}%
+    {{\large \raggedleft \textsc{Correlatore:} \par}}%
+    {\large \raggedleft {\nameStyle{\firstreader}} \par}
+    \ifdef{\coadvisorSecond}%
+    {{\large \raggedleft {\nameStyle{\coadvisorSecond}} \par}
+        \ifdef{\coadvisorThird}%
+        {{\large \raggedleft {\nameStyle{\coadvisorThird}} \par}
+            \ifdef{\coadvisorFourth}%
+            {{\large \raggedleft {\nameStyle{\coadvisorFourth}} \par}}%
+            {}
+        }%
+        {}%
+    }%
+    {}%
+}%
+{}
 
 %\vfill
 
